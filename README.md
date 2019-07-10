@@ -1,5 +1,5 @@
 # HackTheBoxWriteups
-This is where I'm going to stick writeups for HackTheBox machines, as well as the occasional Vulnhub machine.
+Go to the <a href=https://github.com/yaboygmoney/hacktheboxwriteups/wiki>Wiki</a>.
 
 <br><a href=https://github.com/yaboygmoney/HackTheBoxWriteups/wiki/Swagshop>Swagshop</a>
 <br><a href=https://github.com/yaboygmoney/HackTheBoxWriteups/wiki/Writeup>Writeup</a></P>
