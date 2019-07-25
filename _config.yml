@@ -1,4 +1,5 @@
-is_project_page: false
+github:
+  is_project_page: false
 theme: jekyll-theme-hacker
 description: Retired machine writeups. Learn along with me.
 title: G$ HackTheBox Writeups
