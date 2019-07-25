@@ -7,3 +7,7 @@ layout: default
 ### Hours of effort summed up in 3 minutes of reading
 
 [La Casa De Papel](./lcdp.html)
+
+```bash
+echo "this is a test" > test.txt
+```
