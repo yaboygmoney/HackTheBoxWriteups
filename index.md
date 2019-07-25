@@ -4,6 +4,6 @@ layout: default
 
 # G$'s HackTheBox Writeups
 
-### And other musings
+### Hours of effort summed up in 3 minutes of reading
 
-<p>Blah blah blah</p>
+[La Casa De Papel](./lcdp.html)
