@@ -2,4 +2,8 @@
 layout: default
 ---
 
-hello world
+# G$'s HackTheBox Writeups
+
+### And other musings
+
+<p>Blah blah blah</p>
