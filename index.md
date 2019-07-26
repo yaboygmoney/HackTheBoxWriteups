@@ -11,7 +11,7 @@ layout: default
 </div>
 </html>
 
-# HackTheBox Writeups by G$
+# HackTheBox Writeups
 ### hours of effort summed up in a 3 minute read
 
 ## LaCasaDePapel
