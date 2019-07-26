@@ -17,6 +17,6 @@ it comes to organization. Hopefully, through doing writeups, that skill develops
 
 Outside of HackTheBox, I'm a husband, dad, soccer coach, and a nearly finished college student.
 
-I hope you enjoy the writeups. If they're trash, I'm purposefully left off a comments section for that reason.
+I hope you enjoy the writeups. If they're trash, I've purposefully left off a comments section for that reason.
 
 Keep trying.
