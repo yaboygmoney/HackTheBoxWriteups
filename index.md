@@ -16,4 +16,4 @@ layout: default
 ##### LaCasaDePapel
 ###### Retired 26 July 2019
 
-[---> Read the writeup](https://yaboygmoney.github.io/lcdp.html)
+[--> Read the writeup](https://yaboygmoney.github.io/lcdp.html)
