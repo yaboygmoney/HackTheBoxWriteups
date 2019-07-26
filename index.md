@@ -12,4 +12,8 @@ layout: default
 # HackTheBox Writeups by G$
 ### hours of effort summed up in a 3 minute read
 
-#### 
+#### Newest writeup
+##### LaCasaDePapel
+###### Retired 26 July 2019
+
+[---> Read the writeup](https://yaboygmoney.github.io/lcdp.html)
