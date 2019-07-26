@@ -2,12 +2,7 @@
 layout: default
 ---
 
-# G$'s HackTheBox Writeups
+# HackTheBox Writeups by G$
 
-### Hours of effort summed up in 3 minutes of reading
+### hours of effort summed up in a 3 minute read
 
-[La Casa De Papel](./lcdp.html)
-
-```bash
-echo "this is a test" > test.txt
-```
