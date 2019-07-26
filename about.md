@@ -15,8 +15,8 @@ layout: default
 ### hours of effort summed up in a 3 minute read
 ## about me
 
-hackthebox username: [yaboygmoney](https://www.hackthebox.eu/home/users/profile/56685)<BR>
-![HTB Badge](https://www.hackthebox.eu/badge/image/56685)
+![HTB Badge](https://www.hackthebox.eu/badge/image/56685)<BR>
+hackthebox username: [yaboygmoney](https://www.hackthebox.eu/home/users/profile/56685)
 
 I'm a cybersecurity guy trying to pose as a hackerman. I started this blog because I am (self-proclaimed) terrible when 
 it comes to organization. Hopefully, through doing writeups, that skill develops over time. I truly enjoy all things nerd: programming,
