@@ -14,7 +14,6 @@ layout: default
 
 #### Newest writeup
 
-
 #### LaCasaDePapel
 ###### Retired 26 July 2019
 
