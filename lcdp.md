@@ -1,16 +1,17 @@
 ---
 layout: default
 ---
-
 <html>
 <div class="topnav">  
-  <a href="https://yaboygmoney.github.io/htb/index.html">Home</a>
-  <a href="https://yaboygmoney.github.io/htb/about.html">About</a>
-  <a href="https://yaboygmoney.github.io/htb/machines.html">Machines</a>
+  <div style="float:right">
+    <a href="https://yaboygmoney.github.io/htb/index.html">HOME</a>
+    <a href="https://yaboygmoney.github.io/htb/about.html">ABOUT</a>
+    <a href="https://yaboygmoney.github.io/htb/machines.html">MACHINES</a>
+  </div>
 </div>
 </html>
 
-## HackTheBox Writeups by G$
+# HackTheBox Writeups
 ### hours of effort summed up in a 3 minute read
 
 ## LaCasaDePapel
