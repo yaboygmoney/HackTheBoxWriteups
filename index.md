@@ -13,7 +13,7 @@ layout: default
 
 # HackTheBox Writeups
 ### hours of effort summed up in a 3 minute read
-
+---
 ## LaCasaDePapel
 ###### Retired 26 July 2019
 LaCasaDePapel forced filthy casuals like me to explore the world of `openssl`, dabble with LFI, and mess with some configgies to get root.<BR>
