@@ -1,7 +1,19 @@
 ---
 layout: default
 ---
-# LaCasaDePapel
+
+<html>
+<div class="topnav">  
+  <a href="https://yaboygmoney.github.io/htb/index.html">Home</a>
+  <a href="https://yaboygmoney.github.io/htb/about.html">About</a>
+  <a href="https://yaboygmoney.github.io/htb/machines.html">Machines</a>
+</div>
+</html>
+
+## HackTheBox Writeups by G$
+### hours of effort summed up in a 3 minute read
+
+## LaCasaDePapel
 ### Retired 26 July 2019
 
 ![](https://www.hackthebox.eu/storage/avatars/509c1d6ddf04cf3d3f8054a564f2e93a.png)
