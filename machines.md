@@ -16,7 +16,7 @@ layout: default
 
 Machine Name | Date Retired
 ------------ | ------------
-[LaCasaDePapel](https://yaboygmoney.github.io/htb/lcdp.html) | 26 July 2019
+[LaCasaDePapel](https://yaboygmoney.github.io/htb/lcdp.html) | 27 July 2019
 [Bastion](https://yaboygmoney.github.io/htb/bastion.html) | Still Active
 [Haystack](https://yaboygmoney.github.io/htb/haystack.html) | Still Active
 [Jarvis](https://yaboygmoney.github.io/htb/jarvis.html) | Still Active
