@@ -28,4 +28,4 @@ Outside of HackTheBox, I'm a husband, dad, soccer coach, and a nearly finished c
 
 I hope you enjoy the writeups. If they're trash, I've purposefully left off a comments section.
 
-> Keep trying.
+Keep trying.
