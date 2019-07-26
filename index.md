@@ -23,3 +23,10 @@ LaCasaDePapel forced us to explore the world of `openssl`, dabble with LFI, and 
 ```bash
 nmap -sV -O 10.10.10.100 > nmap.results
 ```
+
+```python
+doesMcCoidSuck = False
+if x!=y:
+  doesMcCoidSuck = True
+else:
+  doesMcCoidSuck = True #Still
