@@ -22,7 +22,7 @@ I'm a cybersecurity guy trying to pose as a hackerman. I started this blog becau
 it comes to organization. Hopefully, through doing writeups, that skill develops over time. I truly enjoy all things nerd: programming,
 malware analysis, forensics, etc.
 
-When going through my writeups, the implied first step is to kick off [some lo-fi beats](https://youtu.be/bebuiaSKtU4).
+When going through my writeups, the implied first step of any machine is to kick off [some lo-fi beats](https://youtu.be/bebuiaSKtU4).
 
 Outside of HackTheBox, I'm a husband, dad, soccer coach, and a nearly finished college student.
 
