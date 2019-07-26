@@ -15,7 +15,7 @@ layout: default
 ### hours of effort summed up in a 3 minute read
 
 ## LaCasaDePapel
-### Retired 27 July 2019
+##### Retired 27 July 2019
 
 ![](https://www.hackthebox.eu/storage/avatars/509c1d6ddf04cf3d3f8054a564f2e93a.png)
 
