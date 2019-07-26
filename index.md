@@ -18,3 +18,8 @@ layout: default
 ###### Retired 26 July 2019
 LaCasaDePapel forced us to explore the world of `openssl`, dabble with LFI, and mess with some configgies to get root.<BR>
 [--> Read the writeup](https://yaboygmoney.github.io/htb/lcdp.html)
+
+
+```bash
+nmap -sV -O 10.10.10.100 > nmap.results
+```
