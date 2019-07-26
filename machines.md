@@ -14,9 +14,6 @@ layout: default
 # HackTheBox Writeups
 ### hours of effort summed up in a 3 minute read
 
-# HackTheBox Writeups by G$
-### hours of effort summed up in a 3 minute read
-
 Machine Name | Date Retired
 ------------ | ------------
 [LaCasaDePapel](https://yaboygmoney.github.io/htb/lcdp.html) | 26 July 2019
