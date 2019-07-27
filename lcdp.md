@@ -102,7 +102,7 @@ Step 2: Take your CSR, the cert we just exported, and the CA root key and mash a
 ```bash
 openssl x509 -req -in lcdp.csr -CA lacasadepapelhtb.crt -CAKey CA.key -CAcreateserial -out my.crt -days 1825
 ```
-![](https://yaboygmoney.github/io/htb/images/lcdp/step2.JPG)
+![](https://yaboygmoney.github.io/htb/images/lcdp/step2.JPG)
 
 Let’s break this behemoth down (```openssl``` is a monster of a command, btw). ```-in lcdp.csr``` says “here’s my request”. ```-CA``` says “here’s the site’s cert”. ```-CAKey``` says “here’s the Certificate Authorities private key”. ```-out my.crt``` is what we want to name our new magic client cert. ```-days``` is how many days the cert is valid for.
 
@@ -113,22 +113,22 @@ openssl pkcs12 -inkey mykey.key -in my.crt -export -out lcdp.pfx
 Then we open up Firefox and add our new pfx/pkcs12 file.
 Firefox > Preferences > Privacy & Security > View Certificates > Your Certificates > Import
 
-![](https://yaboygmoney.github/io/htb/images/lcdp/yourCerts.JPG)
+![](https://yaboygmoney.github.io/htb/images/lcdp/yourCerts.JPG)
 
 Once we refresh the page on 443, we get this.
 
-![](https://yaboygmoney.github/io/htb/images/lcdp/thissitehas.JPG)
+![](https://yaboygmoney.github.io/htb/images/lcdp/thissitehas.JPG)
 
 Dooope. Say ok.
 Now the webpage looks a little different. We get into the ‘Private Area’.
 
-![](https://yaboygmoney.github/io/htb/images/lcdp/private%20area.JPG)
+![](https://yaboygmoney.github.io/htb/images/lcdp/private%20area.JPG)
 
 Just clicking around shows us that SEASON-1 is fetched with the URL of http://10.10.10.131/?path=SEASON-1. My brain immediately gets the idea of local file inclusion (LFI).
 
 After clicking on Season-1, we’re met with a lot of AVI files. They don’t actually do anything, but we can download them. The download URL is interesting. It’s ```http://10.10.10.131/file/``` + a random string of characters, but for each file the string starts with ```U0VBU09OLTEvMD```.
 
-![](https://yaboygmoney.github/io/htb/images/lcdp/links.JPG)
+![](https://yaboygmoney.github.io/htb/images/lcdp/links.JPG)
 
 Interesting. I copy the string and pipe it into base64 -d.
 
@@ -136,11 +136,11 @@ Interesting. I copy the string and pipe it into base64 -d.
 echo U0VBU09OLTEvMD | base64 -d
 ```
 
-![](https://yaboygmoney.github/io/htb/images/lcdp/decode.JPG
+![](https://yaboygmoney.github.io/htb/images/lcdp/decode.JPG)
 
 Turns out our string is the filepath base64’d. Naturally, I try ```../../../../../../../etc/passwd``` to see if we can’t get away with something like that.
 
-![](https://yaboygmoney.github/io/htb/images/lcdp/etcpasswd.JPG)
+![](https://yaboygmoney.github.io/htb/images/lcdp/etcpasswd.JPG)
 
 Spoiler: we can’t.
 
@@ -184,7 +184,7 @@ ssh berlin@10.10.10.131 -i id_rsa
 ```
 ![](https://yaboygmoney.github.io/htb/images/lcdp/password.JPG)
 
-Remember when I put hopefully in parenthesis? Applicable. It asking for a password means that either this key still requires a password, or it's not valid for this user.
+Remember when I put "hopefully" in parenthesis? Applicable. It asking for a password means that either this key still requires a password, or it's not valid for this user.
 
 We have no other information, so I guess we try other users. It’s a private key we stole from this machine. It’s not useless (again, hopefully). Back when we LFI’d to the /home directory we saw berlin, dali, nairobi, oslo, and professor as users on the machine. It’s always the last one you try.
 
