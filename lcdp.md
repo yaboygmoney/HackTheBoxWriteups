@@ -129,6 +129,8 @@ Just clicking around shows us that SEASON-1 is fetched with the URL of http://10
 
 After clicking on Season-1, we’re met with a lot of AVI files. They don’t actually do anything, but we can download them. The download URL is interesting. It’s ```http://10.10.10.131/file/``` + a random string of characters, but for each file the string starts with ```U0VBU09OLTEvMD```.
 
+![](https://yaboygmoney.github/io/htb/images/lcdp/links.JPG)
+
 Interesting. I copy the string and pipe it into base64 -d.
 
 ```bash
@@ -143,41 +145,89 @@ Turns out our string is the filepath base64’d. Naturally, I try ```../../../..
 
 Spoiler: we can’t.
 
-![](https://yaboygmoney.github/io/htb/images/lcdp/crushed443.JPG)
+![](https://yaboygmoney.github.io/htb/images/lcdp/crushed443.JPG)
 
-A bad GET request actually crushes HTTPS for us for a while, so it’s best to be cautious with what we request to save our sanity and time. Something else we can try is to just find /home. I navigate to https://10.10.10.131/?path=../../../../../../home and get something useful.
+A bad GET request actually crushes HTTPS for us for a while, so it’s best to be cautious with what we request to save our sanity and time. Something else we can try is to just find /home. I navigate to https://10.10.10.131/?path=../../../../../../home and get something useful: users.
 
-I pass this URL and my cert to ZAP and let it spider the page. Eventually we see Berlin’s ssh private key “id_rsa” sitting in /home/berlin/.ssh/. If only we could download it.
+![](https://yaboygmoney.github.io/htb/images/lcdp/home.JPG)
 
-What if we base64 encoded the path and sent that as a follow on to the https://10.10.10.131/file/ URL from earlier?
-Once again, I am lazy. I open <link>CyberChef</link> and type in my string and add “To Base64” to my recipe.
+I pass this URL and my cert to ZAP and let it spider the page. Berlin’s ssh private key “id_rsa” sitting in ```/home/berlin/.ssh/```. Unfortunately the link isn't clickable, it's only text.
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/privKey.JPG)
+
+If only we could download it.
+
+What if we base64 encoded the path and sent that as a follow on to the ```https://10.10.10.131/file/``` URL from earlier?
+Once again, I am lazy. I open [CyberChef](https://gchq.github.io/CyberChef/) and type in my string and add “To Base64” to my recipe.
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/chef.JPG)
 
 Now we should be able to tack on that output to the /file/ URL and get the key.
-https://10.10.10.131/file/[ourbase64string]
+https://10.10.10.131/file/\[ourbase64string]
 
+![](https://yaboygmoney.github.io/htb/images/lcdp/getKey.JPG)
 
 Got it. Might as well get the user flag too.
 
+![](https://yaboygmoney.github.io/htb/images/lcdp/user.JPG)
 
 Okay. Back to the SSH key we just comp’d. chmod the file so it’s hella restricted or else it will be ignored. See:
 
-‘chmod +600 id_rsa’
-Now we can SSH into the box as berlin using the private key and (hopefully) no other credentials will be required. To do that we use “-i” for identity file.
-‘ssh berlin@10.10.10.131 -i id_rsa’
-Remember when I put hopefully in parenthesis? Applicable.
+![](https://yaboygmoney.github.io/htb/images/lcdp/badperm.JPG)
 
-I guess we try other users. It’s a private key we stole from this machine. It’s not useless (again, hopefully). Back when we LFI’d to the /home directory we saw berlin, dali, nairobi, oslo, and professor. It’s always the last one you try.
+```bash
+chmod +600 id_rsa
+```
+
+Now we can SSH into the box as berlin using the private key and (hopefully) no other credentials will be required. To do that we use ```-i``` for identity file.
+```bash
+ssh berlin@10.10.10.131 -i id_rsa
+```
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/password.JPG)
+
+Remember when I put hopefully in parenthesis? Applicable. It asking for a password means that either this key still requires a password, or it's not valid for this user.
+
+We have no other information, so I guess we try other users. It’s a private key we stole from this machine. It’s not useless (again, hopefully). Back when we LFI’d to the /home directory we saw berlin, dali, nairobi, oslo, and professor as users on the machine. It’s always the last one you try.
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/sshd.JPG)
 
 We’ve landed on the box as the user professor. A quick directory listing shows we have a few files in our home directory.
 
+![](https://yaboygmoney.github.io/htb/images/lcdp/SGID%20set.JPG)
 
-This directory listing is very useful to us. First, we see that the SGID bit is set on the directory itself. Next, we see that the owner of the file ‘memcached.ini’ is root. Any ini, conf, or config file we can write to and have run as root is money. If we cat those out:
+This directory listing is very useful to us. First, we see that the SGID bit is set on the directory itself. This will allow us to inherit the permissions of whatever the group owner is. Next, we see that the owner of the file ‘memcached.ini’ is root. Any ini, conf, or config file we can write to and have run as root is money. If we ```cat``` those out:
 
-It looks like the ini file is setting a command variable that we can only assume will be executed once /usr/bin/memcached is ran.
-This next screenshot has quite a bit going on so we’ll step through. Notice I didn’t completely obliterate the original memcached.ini file. Backups, homies. Other people play here, too. I made a copy of the OG memcached.ini as memcached.ini.bak. Next, I created a file called ‘new’ and opened it with vi. Once in vi, I pasted the format of the original memcached.ini but replaced the command with a python reverse shell. In another terminal, I setup my netcat listener. Finally, I renamed ‘new’ to ‘memcached.ini’.
+![](https://yaboygmoney.github.io/htb/images/lcdp/memcached.JPG)
 
-After we get the new ini file written, we execute the program so that it has to go fetch its new configuration. Switching tabs, we can see that we caught our shell.
+It looks like the ini file is setting a command variable that we can only assume will be executed once ```/usr/bin/memcached``` is ran. We're going to try and exploit that permission.
+
+This next screenshot has quite a bit going on so we’ll step through. Before we start, notice I didn’t completely obliterate the original memcached.ini file. Backups, homies. Other people play here, too. 
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/steps.JPG)
+
+I made a copy of the OG memcached.ini as memcached.ini.bak in the first ```cp``` command. Next, I created a file called ‘new’ and opened it with ```vi new```. Once in vi, I pasted the format of the original memcached.ini but replaced the command with a python reverse shell. 
+
+In another terminal, I setup my netcat listener with 
+```bash
+nc -nvlp 1234
+````
+
+Finally, I renamed ‘new’ to ‘memcached.ini’.
+
+After we get the new ini file written, we execute the program so that it has to go fetch its new configuration. 
+```bash
+/usr/bin/memcached
+```
+
+Switching tabs, we can see that we caught our root shell.
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/rooted.JPG)
 
 All that’s left to do is tidy up. Copy the original memcached.ini file back to its original place, delete the backups, and submit the flag.
-Again, special thanks to Alec (sarcastically named imthebest on HTB) for grinding through those openssl commands. To us filthy casuals, cert forgery was no joke.
 
+Again, special thanks to Alec (sarcastically named imthebest on HTB) for grinding through those ```openssl``` commands. To us filthy casuals, cert forgery was no joke.
+
+Until next time.
+
+#### Keep trying
