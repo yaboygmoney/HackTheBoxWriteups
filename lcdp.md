@@ -82,7 +82,7 @@ This is a function that exists to sign an SSL client cert with the CA Root Key. 
 
 Now, I could hella fancy and fix this key with sed and all. But I’m lazy and opening it with ```gedit``` and doing a find and replace is just as fast. Copy the text, paste it into gedit, find and replace the “\n” with nothing, and get rid of the spaces at the beginning of each line and we’re in business with a fully functional CA root key. Now we can use this CA root key to make our client cert for the 443 webpage.
 
-Disclaimer: The protégé Alec [imthebest](https://www.hackthebox.eu/home/users/profile/105191) figured this next cert bit out. I messed with it for about an hour and decided to do something else. This dude sat there for a long time reading documentation, got it to work, and then so graciously taught me.
+Disclaimer: The protégé Alec ([imthebest](https://www.hackthebox.eu/home/users/profile/105191)) figured this next cert bit out. I messed with it for about an hour and decided to do something else. This dude sat there for a long time reading documentation, got it to work, and then so graciously taught me.
 
 Step 1: We need to create a private key of our own, as well as a certificate signing request (csr).
 ```bash
@@ -110,7 +110,6 @@ Step 3: Merge your private key and the client cert into a pkcs12 file so that Fi
 ```bash
 openssl pkcs12 -inkey mykey.key -in my.crt -export -out lcdp.pfx
 ```
-
 Then we open up Firefox and add our new pfx/pkcs12 file.
 Firefox > Preferences > Privacy & Security > View Certificates > Your Certificates > Import
 
@@ -183,7 +182,6 @@ Now we can SSH into the box as berlin using the private key and (hopefully) no o
 ```bash
 ssh berlin@10.10.10.131 -i id_rsa
 ```
-
 ![](https://yaboygmoney.github.io/htb/images/lcdp/password.JPG)
 
 Remember when I put hopefully in parenthesis? Applicable. It asking for a password means that either this key still requires a password, or it's not valid for this user.
