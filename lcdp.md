@@ -35,61 +35,115 @@ As a normal step, I ran gobuster in the background but I didn’t find anything 
  
 Starting at the top of the nmap results list, FTP version vsftpd 2.3.4 is *old* and has an available exploit that when a user attempts to login with a smiley, it kicks open the server on port 6200 and enables unauthenticated access. A full breakdown of the vulnerability is available [here](https://www.hackingtutorials.org/metasploit-tutorials/exploiting-vsftpd-metasploitable/).
 To exploit this vulnerability, we can use either telnet or netcat to first connect to port 21. We submit
-```‘USER invalid:)’```
-as our username and 
-```‘PASS idk’```
-for our password. The password can be literally anything. The function to open the secondary port is executed by the username smiley.
-After that, we ca then connect a second time to port 6200.
 
-As you can see, the FTP server hangs after we supply it with the smiley face username. Just for fun, another nmap scan shows the new port opened.
+```USER invalid:)```
+
+as our username and 
+
+```PASS idk```
+
+for our password. The password can be literally anything. The function to open the secondary port is executed by the username smiley.
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/ftpHang.JPG)
+
+The FTP server hangs after we submit those credentials. After that login function runs we can then connect a second time, this time to port 6200.
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/psyShell.JPG)
 
 Connecting to the new port with netcat shows us a banner
 ‘Psy Shell v0.9.9 (PHP 7.2.10 – cli) by Justin Hileman’
 
 As with a lot of specific technologies on HackTheBox, I’ve never encountered Psy Shell before. A quick Google tells me it’s a php debugging shell.
-When in doubt, run ‘help’.
+When in doubt, run ```help```
 
-Awesome. First things first, I run ls to see what’s going on.
+![](https://yaboygmoney.github.io/htb/images/lcdp/help.JPG)
 
-Looks like there’s a single variable here. I ran ‘help ls’ and saw –constants to show all of the constants. Don’t do that.
+Awesome. First things first, I run ```ls``` to see what’s going on.
 
-The next command I run help against is ‘show’.
+![](https://yaboygmoney.github.io/htb/images/lcdp/ls.JPG)
 
-The example ‘show $myObject’ would probably work pretty well with ‘show $tokyo’.
+Looks like there’s a single variable here. I ran ‘help ls’ and saw –constants to show all of the constants. I ran it out of curiosity.  Don’t do that.
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/constantsMess.JPG)
+
+The next command I run help against is ‘show’ like ```help show```
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/help%20show.JPG)
+
+The example ```show $myObject``` would probably work pretty well with ```show $toyko``` from our ```ls``` results from earlier.
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/methodPrint.JPG)
 
 This is a function that exists to sign an SSL client cert with the CA Root Key. I just didn’t know how to get it. Turns out, to get that CA root key you just need to call the function within the Psy Shell.
 
-Now, I could hella fancy and fix this key with sed and all. But I’m lazy and opening it with gedit and doing a find and replace is just as fast. Copy the text, paste it into gedit, find and replace the “\n” with nothing, and get rid of the spaces at the beginning of each line and we’re in business with a fully functional CA root key. Now we can make our client cert for the 443 webpage.
-Disclaimer: The protégé Alec (imthebest) figured this next cert bit out. I messed with it for about an hour and decided to do something else. This dude sat there for a long time reading documentation, got it to work, and then so graciously taught me.
-Step 1: We need to create a private key of our own, as well as a certificate signing request (csr)
-‘openssl req -newkey rsa:2048 -nodes -keyout mykey.key -out lcdp.csr’
+```file_get_contents('/home/nairobi/ca.key');``` pays off.
+
+![](https://yaboygmoney.github.io/htb/images/lcdp/CARootKey.JPG)
+
+Now, I could hella fancy and fix this key with sed and all. But I’m lazy and opening it with ```gedit``` and doing a find and replace is just as fast. Copy the text, paste it into gedit, find and replace the “\n” with nothing, and get rid of the spaces at the beginning of each line and we’re in business with a fully functional CA root key. Now we can use this CA root key to make our client cert for the 443 webpage.
+
+Disclaimer: The protégé Alec [imthebest](https://www.hackthebox.eu/home/users/profile/105191) figured this next cert bit out. I messed with it for about an hour and decided to do something else. This dude sat there for a long time reading documentation, got it to work, and then so graciously taught me.
+
+Step 1: We need to create a private key of our own, as well as a certificate signing request (csr).
+```bash
+openssl req -newkey rsa:2048 -nodes -keyout mykey.key -out lcdp.csr
+```
 Mykey.key is obviously my new private key, and lcdp.csr is the request that we will be signing with our newly stolen root key in just a few steps.
 
-I learned that you can’t just put a dot in every field, hence the ‘a’ in Common Name. It doesn’t really matter.
+When making the csr, I learned that you can’t just put a dot in every field, hence the ‘a’ in Common Name. It doesn’t really matter what you put in here.
+
+![](https://yaboygmoney.github/io/htb/images/lcdp/step1.JPG)
+
 Aside from the CSR and CA root key, we need a third ingredient: the cert from the website. You could curl it to get it. I just used Firefox to export it. Click on the little padlock with the alert symbol next to the URL > View Certificate > Details > Export. Save that dude to your working directory. I saved mine as the default “lacasadepapel.crt”.
 
-Step 2: Take your CSR, the cert we just exported, and the CA root key and mash all of those up into a client cert.
-‘openssl x509 -req -in lcdp.csr -CA lacasadepapelhtb.crt -CAKey CA.key -CAcreateserial -out my.crt -days 1825’
+![](https://yaboygmoney.github.io/htb/images/lcdp/siteCert.JPG)
 
-Let’s break this behemoth down (openssl is a monster of a command, btw). -in lcdp.csr says “here’s my request”. -CA says “here’s the site’s cert”. -CAKey says “here’s the Certificate Authorities private key”. -out my.crt what we want to name our new magic client cert. -days is how many days the cert is valid for.
+Step 2: Take your CSR, the cert we just exported, and the CA root key and mash all of those up into a client cert.
+```bash
+openssl x509 -req -in lcdp.csr -CA lacasadepapelhtb.crt -CAKey CA.key -CAcreateserial -out my.crt -days 1825
+```
+![](https://yaboygmoney.github/io/htb/images/lcdp/step2.JPG)
+
+Let’s break this behemoth down (```openssl``` is a monster of a command, btw). ```-in lcdp.csr``` says “here’s my request”. ```-CA``` says “here’s the site’s cert”. ```-CAKey``` says “here’s the Certificate Authorities private key”. ```-out my.crt``` is what we want to name our new magic client cert. ```-days``` is how many days the cert is valid for.
+
 Step 3: Merge your private key and the client cert into a pkcs12 file so that Firefox will use it.
-‘openssl pkcs12 -inkey mykey.key -in my.crt -export -out lcdp.pfx’
+```bash
+openssl pkcs12 -inkey mykey.key -in my.crt -export -out lcdp.pfx
+```
+
 Then we open up Firefox and add our new pfx/pkcs12 file.
 Firefox > Preferences > Privacy & Security > View Certificates > Your Certificates > Import
 
+![](https://yaboygmoney.github/io/htb/images/lcdp/yourCerts.JPG)
+
 Once we refresh the page on 443, we get this.
+
+![](https://yaboygmoney.github/io/htb/images/lcdp/thissitehas.JPG)
 
 Dooope. Say ok.
 Now the webpage looks a little different. We get into the ‘Private Area’.
 
+![](https://yaboygmoney.github/io/htb/images/lcdp/private%20area.JPG)
+
 Just clicking around shows us that SEASON-1 is fetched with the URL of http://10.10.10.131/?path=SEASON-1. My brain immediately gets the idea of local file inclusion (LFI).
-After clicking on Season-1, we’re met with a lot of AVI files. They don’t actually do anything, but we can download them. The download URL is interesting. It’s http://10.10.10.131/file/ + a random string of characters, but for each file the string starts with “U0VBU09OLTEvMD”.
 
- Interesting. I copy the string and pipe it into base64 -d.
+After clicking on Season-1, we’re met with a lot of AVI files. They don’t actually do anything, but we can download them. The download URL is interesting. It’s ```http://10.10.10.131/file/``` + a random string of characters, but for each file the string starts with ```U0VBU09OLTEvMD```.
 
-Turns out our string is the filepath base64’d. Naturally, I try ../../../../../../../etc/passwd to see if we can’t get away with something like that.
+Interesting. I copy the string and pipe it into base64 -d.
+
+```bash
+echo U0VBU09OLTEvMD | base64 -d
+```
+
+![](https://yaboygmoney.github/io/htb/images/lcdp/decode.JPG
+
+Turns out our string is the filepath base64’d. Naturally, I try ```../../../../../../../etc/passwd``` to see if we can’t get away with something like that.
+
+![](https://yaboygmoney.github/io/htb/images/lcdp/etcpasswd.JPG)
 
 Spoiler: we can’t.
+
+![](https://yaboygmoney.github/io/htb/images/lcdp/crushed443.JPG)
 
 A bad GET request actually crushes HTTPS for us for a while, so it’s best to be cautious with what we request to save our sanity and time. Something else we can try is to just find /home. I navigate to https://10.10.10.131/?path=../../../../../../home and get something useful.
 
