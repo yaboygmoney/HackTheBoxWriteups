@@ -128,7 +128,7 @@ Just clicking around shows us that SEASON-1 is fetched with the URL of http://10
 
 After clicking on Season-1, we’re met with a lot of AVI files. They don’t actually do anything, but we can download them. The download URL is interesting. It’s ```http://10.10.10.131/file/``` + a random string of characters, but for each file the string starts with ```U0VBU09OLTEvMD```.
 
-![](https://yaboygmoney.github.io/htb/images/lcdp/links.JPG)
+![](https://yaboygmoney.github.io/htb/images/lcdp/links.PNG)
 
 Interesting. I copy the string and pipe it into base64 -d.
 
