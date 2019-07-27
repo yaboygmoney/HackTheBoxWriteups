@@ -92,7 +92,7 @@ Mykey.key is obviously my new private key, and lcdp.csr is the request that we w
 
 When making the csr, I learned that you can’t just put a dot in every field, hence the ‘a’ in Common Name. It doesn’t really matter what you put in here.
 
-![](https://yaboygmoney.github/io/htb/images/lcdp/step1.JPG)
+![](https://yaboygmoney.github.io/htb/images/lcdp/step1.JPG)
 
 Aside from the CSR and CA root key, we need a third ingredient: the cert from the website. You could curl it to get it. I just used Firefox to export it. Click on the little padlock with the alert symbol next to the URL > View Certificate > Details > Export. Save that dude to your working directory. I saved mine as the default “lacasadepapel.crt”.
 
