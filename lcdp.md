@@ -150,7 +150,7 @@ A bad GET request actually crushes HTTPS for us for a while, so it’s best to b
 
 ![](https://yaboygmoney.github.io/htb/images/lcdp/home.JPG)
 
-I pass this URL and my cert to ZAP and let it spider the page. Berlin’s ssh private key “id_rsa” sitting in ```/home/berlin/.ssh/```. Unfortunately the link isn't clickable, it's only text.
+I pass this URL and my cert to ZAP and let it spider the page. Berlin’s ssh private key “id_rsa” is sitting in ```/home/berlin/.ssh/```. Unfortunately the link isn't clickable, it's only text.
 
 ![](https://yaboygmoney.github.io/htb/images/lcdp/privKey.JPG)
 
