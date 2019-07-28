@@ -175,7 +175,7 @@ Okay. Back to the SSH key we just comp’d. chmod the file so it’s hella restr
 ![](https://yaboygmoney.github.io/htb/images/lcdp/badperm.JPG)
 
 ```bash
-chmod +600 id_rsa
+chmod 600 id_rsa
 ```
 
 Now we can SSH into the box as berlin using the private key and (hopefully) no other credentials will be required. To do that we use ```-i``` for identity file.
