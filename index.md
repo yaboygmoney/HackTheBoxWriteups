@@ -14,6 +14,8 @@ layout: default
 # HackTheBox Writeups
 ### hours of effort summed up in a 3 minute read
 
+More writeups will become available as the machines retire from the HTB server.
+
 ## LaCasaDePapel
 ###### Retired 27 July 2019
 LaCasaDePapel forced filthy casuals like me to explore the world of `openssl`, dabble with LFI, and mess with some configgies to get root.<BR>
