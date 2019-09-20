@@ -19,7 +19,7 @@ layout: default
 ![](https://yaboygmoney.github.io/htb/images/luke/machineImage.jpg)
 
 ##### Intro
-Luke was a hard box, but it was all about organization. By the end, we had 4 different login panels, 5 sets of credentials, and lots of combinations to try.
+Luke wasn't a difficult box, but it was all about organization. By the end, we had 4 different login panels, 5 sets of credentials, and lots of combinations to try.
 
 First step is always our scan.
 ```bash
