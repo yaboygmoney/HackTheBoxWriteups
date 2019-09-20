@@ -42,6 +42,7 @@ gobuster -x php,html -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium
 ```
 
 Gobuster gives us a few options to check out:
+
 ![](https://yaboygmoney.github.io/htb/images/luke/gobusterResults.JPG)
 
 We're given the index page we've already visited, a login.php page, and a config.php page. 
@@ -56,6 +57,7 @@ Password: Zk6heYCyv6ZE9Xcg
 ```
 
 I confidently take those creds to the login.php page:
+
 ![](https://yaboygmoney.github.io/htb/images/luke/loginphp.JPG)
 
 ...and get nowhere. I try some typical web exploit stuff and nothing works, so I decide to move on and check out other ports.
@@ -65,10 +67,12 @@ Our nmap results showed an ```Ajenti http control panel``` so I take my creds th
 
 I try our creds there. Nope. I find the default creds for Ajenti (root:admin). Nope. I try some other usernames like administrator, luke, vader, darthvader (I tried a theme, ok?). 
 No dice. Looking back at our list of ports my current situation is:
-21 - exhausted
-80 - probably exhausted
-3000 - untouched
-8000 - probably exhausted
+| Port | Status |
+| ------------- |:-------------|
+| 21   | exhausted |
+| 80   | probably exhausted |
+| 3000 | untouched |
+| 8000 | probably exhausted |
 
 I decide to send gobuster after port 8000 and move onto node.js. I'm confident that this is where I'll use the database creds I found earlier.
 
