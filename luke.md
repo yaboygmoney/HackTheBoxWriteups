@@ -94,7 +94,7 @@ All I got back was “Forbidden”. Come on. I used the creds you gave me. At th
 
 ![](https://yaboygmoney.github.io/htb/images/luke/authenticated.JPG)
 
-Bingpot. While we were working on this guy, gobuster found else something we might be interested in. http://luke.htb:3000/users. Cool cool cool cool cool.
+Bingpot. While we were working on this guy, gobuster found something else we might be interested in. http://luke.htb:3000/users. Cool cool cool cool cool.
 
 Now we use the second command provided by Naren and stuff our token in there. That command looks like:
 ```bash
