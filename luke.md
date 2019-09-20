@@ -62,7 +62,7 @@ I confidently take those creds to the login.php page:
 ![](https://yaboygmoney.github.io/htb/images/luke/loginphp.JPG)
 
 ...and get nowhere. I try some typical web exploit stuff and nothing works, so I decide to move on and check out other ports.
-Our nmap results showed an ```Ajenti http control panel``` so I take my creds there.
+Our nmap results showed an "Ajenti http control panel" so I check it out.
 
 ![](https://yaboygmoney.github.io/htb/images/luke/panellogin.JPG)
 
