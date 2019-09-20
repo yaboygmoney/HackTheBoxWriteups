@@ -85,7 +85,7 @@ curl -u root:Zk6heYCyv6ZE9Xcg http://10.10.10.137:3000
 
 ![](https://yaboygmoney.github.io/htb/images/luke/tokennotvalid.JPG)
 
-Okay, so that didn’t work but also didnt' totally fail. I have creds, but no token. Time to Google.
+Okay, so that didn’t work but also didn't totally fail. I have creds, but no token. Time to Google.
 Fortunately I found [this](https://medium.com/dev-bits/a-guide-for-adding-jwt-token-based-authentication-to-your-single-page-nodejs-applications-c403f7cf04f4) (thanks Naren) that showed me how to get an auth token for JWT (JSON Web Tokens). That command ended up looking like this:
 ```bash
 curl --header "Content-Type: application/json" --request POST --data '{"password":"Zk6heYCyv6ZE9Xcg", "username":"root"}' http://10.10.10.137:3000/login
