@@ -20,7 +20,9 @@ More writeups will become available as the machines retire from the HTB server.
 ###### Retired sometime in September?
 This machine was light on exploitation, heavy on finding loose creds.<BR>
 [--> Read the writeup](https://yaboygmoney.github.io/htb/luke.html)
+  
 ---
+
 ## LaCasaDePapel
 ###### Retired 27 July 2019
 LaCasaDePapel forced filthy casuals like me to explore the world of `openssl`, dabble with LFI, and mess with some configgies to get root.<BR>
