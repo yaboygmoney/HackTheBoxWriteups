@@ -48,6 +48,7 @@ Gobuster gives us a few options to check out:
 We're given the index page we've already visited, a login.php page, and a config.php page. 
 
 I hit the config page first and it pays off:
+
 ![](https://yaboygmoney.github.io/htb/images/luke/creds.JPG)
 
 We have a pair of creds now:
@@ -67,12 +68,13 @@ Our nmap results showed an ```Ajenti http control panel``` so I take my creds th
 
 I try our creds there. Nope. I find the default creds for Ajenti (root:admin). Nope. I try some other usernames like administrator, luke, vader, darthvader (I tried a theme, ok?). 
 No dice. Looking back at our list of ports my current situation is:
-| Port | Status |
-| ------------- |:-------------|
-| 21   | exhausted |
-| 80   | probably exhausted |
-| 3000 | untouched |
-| 8000 | probably exhausted |
+
+| Port | Status             |
+|------|--------------------|
+|  21  |  Exhausted         |
+| 80   | Probably Exhausted |
+| 3000 | Untouched          |
+| 8000 | Probably Exhausted |
 
 I decide to send gobuster after port 8000 and move onto node.js. I'm confident that this is where I'll use the database creds I found earlier.
 
@@ -101,6 +103,7 @@ That gives us some good feedback:
 ![](https://yaboygmoney.github.io/htb/images/luke/userslist.JPG)
 
 We get a list of usernames: Admin, Derry, Yuri, and Dory. If we poke just a bit deeper with our curl command and tack on a username after the /users/ URI, we can see a bit more information about each user.
+
 ![](https://yaboygmoney.github.io/htb/images/luke/curlPassword.JPG)
 
 Now we have 5 total sets of creds. Our root set from the config.php page, plus:
@@ -117,12 +120,15 @@ Same for Derry, Yuri, and Dory.
 I try them out at login.php. Nope. I try these creds in various capitalization combinations in several locations and get no love.
 
 I decide to blast dirb at port 80 this point in place of gobuster. Variety of tools is something that HTB has taught me thus far. Dirb finds something that gobuster did not, http://luke.htb/management. The reason that gobuster did not find it is because gobuster's default configuration ignores 401 replies while dirb does not. We hit up the management page and get met with a basic auth prompt.
+
 ![](https://yaboygmoney.github.io/htb/images/luke/managementLogin.JPG)
 
 Feed it Admin creds and..nope. But wait. Think back to the FTP server. Derry is the frontend dev. Derry’s creds get us in to this:
+
 ![](https://yaboygmoney.github.io/htb/images/luke/managment.JPG)
 
 Config.json is what we’re after here, as it has yet another set of creds.
+
 ![](https://yaboygmoney.github.io/htb/images/luke/configjson.JPG)
 
 ```
@@ -131,9 +137,11 @@ Password: KpMasng6S5EtTy9Z
 ```
 
 I figuratively race to port 8000’s webmin panel and plug those babies in and gain access to the Ajenti panel:
+
 ![](https://yaboygmoney.github.io/htb/images/luke/ajentiauthd.JPG)
 
 From here, it’s all over. I see ‘Terminal’ on the sidebar. I click ‘New’ to fire up a web shell and viola!
+
 ![](https://yaboygmoney.github.io/htb/images/luke/flag_LI.jpg)
 
 I stopped here because I got my points, but if you’re a completionist, calling back a shell from here is trivial. Thanks for reading!
