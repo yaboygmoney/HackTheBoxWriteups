@@ -27,7 +27,7 @@ nmap -sV -n -oA nmap 10.10.10.137
 ```
 ![](https://yaboygmoney.github.io/htb/images/luke/nmap.jpg)
 
-Our scan shows we have FTP, Web, NodeJS, and HTTP-Like on 8000. I just worked down the list here. 
+Our scan shows we have FTP, Web, NodeJS, and HTTP-Like on 8000 (Disclaimer: I'm fairly certain SSH wasn't available when I first tackled this box. It might be on now because it's still live for free users, but I had to go back to get a screenshot). I just worked down the list here. 
 FTP didn’t provide a whole lot. We get one text file, for_Chihiro.txt:
 
 ![](https://yaboygmoney.github.io/htb/images/luke/for_Chihiro.JPG)
