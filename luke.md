@@ -117,7 +117,7 @@ Yuri: bet@tester87
 Dory: 5y:!xa=ybfe)/QD
 ```
 
-Instantly I take the admin set over to the port 8000 server webmin panel. Denied.
+I take the admin set over to the port 8000 server webmin panel. Denied.
 Same for Derry, Yuri, and Dory.
 
 I try them out at login.php. Nope. I try these creds in various capitalization combinations in several locations and get no love.
