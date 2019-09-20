@@ -82,6 +82,7 @@ I send a curl at the port and get a response:
 ```bash
 curl -u root:Zk6heYCyv6ZE9Xcg http://10.10.10.137:3000
 ```
+
 ![](https://yaboygmoney.github.io/htb/images/luke/authTokenNotSupplied.JPG)
 
 Okay, so that didn’t work but also didnt' totally fail. I have creds, but no token. Time to Google.
@@ -90,6 +91,7 @@ Fortunately I found [this](https://medium.com/dev-bits/a-guide-for-adding-jwt-to
 curl --header "Content-Type: application/json" --request POST --data '{"password":"Zk6heYCyv6ZE9Xcg", "username":"root"}' http://10.10.10.137:3000/login
 ```
 All I got back was “Forbidden”. Come on. I used the creds you gave me. At this point, it’s all we have. Try other names, I guess? Derry? Chihiro? Nope. Admin? 
+
 ![](https://yaboygmoney.github.io/htb/images/luke/authenticated.JPG)
 
 Bingpot. While we were working on this guy, gobuster found else something we might be interested in. http://luke.htb:3000/users. Cool cool cool cool cool.
@@ -100,6 +102,7 @@ curl -X GET -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c
 ```
 
 That gives us some good feedback:
+
 ![](https://yaboygmoney.github.io/htb/images/luke/userslist.JPG)
 
 We get a list of usernames: Admin, Derry, Yuri, and Dory. If we poke just a bit deeper with our curl command and tack on a username after the /users/ URI, we can see a bit more information about each user.
