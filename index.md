@@ -27,3 +27,6 @@ This machine was light on exploitation, heavy on finding loose creds.<BR>
 ###### Retired 27 July 2019
 LaCasaDePapel forced filthy casuals like me to explore the world of `openssl`, dabble with LFI, and mess with some configgies to get root.<BR>
 [--> Read the writeup](https://yaboygmoney.github.io/htb/lcdp.html)
+
+
+![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fyaboygmoney.github.io%2Fhtb)
