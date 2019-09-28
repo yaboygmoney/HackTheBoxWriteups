@@ -124,7 +124,7 @@ And I finally run vi as root. From here, we can run commands from within this in
 
 from vi.
 
-![](https://yaboygmoney.github.io/htb/images/swagshop/vi.JPG)
+![](https://yaboygmoney.github.io/htb/images/swagshop/escape.JPG)
 
 I end up with a shell that has root skills. Cat the flag and dip.
 
