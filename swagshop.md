@@ -128,3 +128,5 @@ from vi.
 I end up with a shell that has root skills. Cat the flag and dip.
 
 ![](https://yaboygmoney.github.io/htb/images/swagshop/rootFlag2.jpg)
+
+#### Keep trying
