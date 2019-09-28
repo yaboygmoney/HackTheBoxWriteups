@@ -57,7 +57,7 @@ Reading up on Magento, I found that the admin panel is typically stored at /admi
 ![](https://yaboygmoney.github.io/htb/images/swagshop/admin.JPG)
 
 At this point, I don't have any creds. I looked, didn't find anything. Proper Google-Fu pointed me to 
-![this exploit](https://packetstormsecurity.com/files/133327/Magento-Add-Administrator-Account.html).
+[this exploit](https://packetstormsecurity.com/files/133327/Magento-Add-Administrator-Account.html).
 
 I'll be honest, the first time I got in through this web panel, I just used the default creds the script made because I figured someone had already compromised it.
 
@@ -111,9 +111,9 @@ sudo vi junk.txt
 
 Asks for the password = did it wrong. The sudoers file says ```NOPASSWD``` so I shouldn't need it. I try specifying the user ```root```:
 
-![](https://yaboygmoney.github.io/htb/images/swagshop/sudofail2.JPG)
+![](https://yaboygmoney.github.io/htb/images/swagshop/sudoFail2.JPG)
 
-Still wants a password. So I get really explicit. ![DMX-level](https://www.youtube.com/watch?v=6CqXgs-7ico) explicit. I put a literal path to the binary and the filename.
+Still wants a password. So I get really explicit. [DMX-level](https://www.youtube.com/watch?v=6CqXgs-7ico) explicit. I put a literal path to the binary and the filename.
 
 ![](https://yaboygmoney.github.io/htb/images/swagshop/sudo.JPG)
 
