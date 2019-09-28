@@ -14,7 +14,13 @@ layout: default
 # HackTheBox Writeups
 ### hours of effort summed up in a 3 minute read
 
-More writeups will become available as the machines retire from the HTB server.
+## Swagshop
+###### Retired sometime in September
+No creds? Make your own! Plus a lesson in vi-scaping.<BR>
+[--> Read the writeup](https://yaboygmoney.github.io/htb/swagshop.html)
+  
+---
+
 
 ## Luke
 ###### Retired sometime in September?
