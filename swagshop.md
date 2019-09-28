@@ -16,8 +16,8 @@ layout: default
 
 ## Swagshop
 ###### Retired September 19
-![](https://yaboygmoney.github.io/htb/images/swagshop/machineImage.jpg)
-
+![](https://yaboygmoney.github.io/htb/images/swagshop/machineImage.png)
+images/swagshop/admin.JPG
 ##### Intro
 
 Pretty easy box. Web exploit for initial foothold and some classic binary ninja magic for privesc.
