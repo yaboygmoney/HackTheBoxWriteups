@@ -22,5 +22,4 @@ Machine Name | Date Retired
 [Bastion](https://yaboygmoney.github.io/htb/bastion.html) | Retired - Writeup Not Complete
 [Haystack](https://yaboygmoney.github.io/htb/haystack.html) | Still Active
 [Jarvis](https://yaboygmoney.github.io/htb/jarvis.html) | Still Active
-
 [Writeup](https://yaboygmoney.github.io/htb/writeup.html) | Still Active
