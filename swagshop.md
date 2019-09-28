@@ -56,7 +56,8 @@ Reading up on Magento, I found that the admin panel is typically stored at /admi
 
 ![](https://yaboygmoney.github.io/htb/images/swagshop/admin.JPG)
 
-At this point, I don't have any creds. I looked, didn't find anything. Proper Google-Fu pointed me to ![this exploit](https://packetstormsecurity.com/files/133327/Magento-Add-Administrator-Account.html).
+At this point, I don't have any creds. I looked, didn't find anything. Proper Google-Fu pointed me to 
+![this exploit](https://packetstormsecurity.com/files/133327/Magento-Add-Administrator-Account.html).
 
 I'll be honest, the first time I got in through this web panel, I just used the default creds the script made because I figured someone had already compromised it.
 
