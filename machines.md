@@ -16,10 +16,7 @@ layout: default
 
 Machine Name | Date Retired
 ------------ | ------------
+[Heist](https://yaboygmoney.github.io/htb/heist.html) | November 2019
 [LaCasaDePapel](https://yaboygmoney.github.io/htb/lcdp.html) | July 2019
 [Luke](https://yaboygmoney.github.io/htb/luke.html) | Retired in September 2019
 [Swagshop](https://yaboygmoney.github.io/htb/swagshop.html) | Retired in September 2019
-[Bastion](https://yaboygmoney.github.io/htb/bastion.html) | Retired - Writeup Not Complete
-[Haystack](https://yaboygmoney.github.io/htb/haystack.html) | Still Active
-[Jarvis](https://yaboygmoney.github.io/htb/jarvis.html) | Still Active
-[Writeup](https://yaboygmoney.github.io/htb/writeup.html) | Still Active
