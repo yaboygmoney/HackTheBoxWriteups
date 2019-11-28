@@ -14,6 +14,10 @@ layout: default
 # HackTheBox Writeups
 ### hours of effort summed up in a 3 minute read
 
+## Heist
+##### Coming 30 November 2019
+[--> Read the writeup](https://yaboygmoney.github.io/htb/heist.html)
+
 ## Swagshop
 ###### Retired sometime in September
 No creds? Make your own! Plus a lesson in vi-scaping.<BR>
