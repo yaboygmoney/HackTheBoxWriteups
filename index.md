@@ -19,6 +19,8 @@ layout: default
 Cracking, dumping, and more!
 [--> Read the writeup](https://yaboygmoney.github.io/htb/heist.html)
 
+---
+
 ## Swagshop
 ###### Retired sometime in September
 No creds? Make your own! Plus a lesson in vi-scaping.<BR>
