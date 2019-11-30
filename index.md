@@ -15,7 +15,8 @@ layout: default
 ### hours of effort summed up in a 3 minute read
 
 ## Heist
-###### Coming 30 November 2019
+###### Retired 30 November 2019
+Cracking, dumping, and more!
 [--> Read the writeup](https://yaboygmoney.github.io/htb/heist.html)
 
 ## Swagshop
