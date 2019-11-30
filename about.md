@@ -20,7 +20,7 @@ hackthebox username: [yaboygmoney](https://www.hackthebox.eu/home/users/profile/
 
 When going through my writeups, the implied first step of any machine is to kick off some [lo-fi beats](https://youtu.be/bebuiaSKtU4).
 
-Outside of HackTheBox, I'm a husband, dad, soccer coach, and a nearly finished college student.
+Outside of HackTheBox, I'm a husband, dad, soccer coach, and bike enthusiast (road & mtb).
 
 I hope you enjoy the writeups. If they're trash, I've purposefully left off a comments section.
 
