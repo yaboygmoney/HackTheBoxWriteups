@@ -16,7 +16,7 @@ layout: default
 
 ## Heist
 ###### Retired 30 November 2019
-Cracking, dumping, and more!
+Cracking, dumping, and more!<BR>
 [--> Read the writeup](https://yaboygmoney.github.io/htb/heist.html)
 
 ---
