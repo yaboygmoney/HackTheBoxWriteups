@@ -69,7 +69,7 @@ I'm greedy right off the bat and I wanted WinRM capability. Google pointed me to
 
 I tried to run it with each of these usernames and passwords in various combinations to no avail. WinRM apparently isn't the direction I need to go just yet. I turn back to SMB. 
 
-Based on the guest login from the web page, we know that Hazard had an account created for him on the server, so I login to SMB with the ```Hazard:stealth1agent``` combination and it's legit. I needed to enumerate more users for WinRM, so I launched the ```lookupsid.py``` tool I downloaded from Impacket. This tool brute forces SIDs on the server and finds both workgroups and usernames.
+Based on the guest login from the web page, we know that Hazard had an account created for him on the server, so I login to SMB with the ```Hazard:stealth1agent``` combination and it's legit. I needed to enumerate more users for WinRM, so I launched the ```lookupsid.py``` tool I downloaded from ![Impacket](https://github.com/SecureAuthCorp/impacket/tree/master/examples). This tool brute forces SIDs on the server and finds both workgroups and usernames.
 
 ```bash
 ./lookupsid.py hazard:stealth1agent@heist.htb
