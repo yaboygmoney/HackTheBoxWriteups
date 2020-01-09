@@ -1,24 +1,11 @@
 ---
 layout: default
 ---
-<html>
-<div class="topnav">  
-  <div style="float:right">
-    <a href="https://yaboygmoney.github.io/htb/index.html">HOME</a>
-    <a href="https://yaboygmoney.github.io/htb/about.html">ABOUT</a>
-    <a href="https://yaboygmoney.github.io/htb/machines.html">MACHINES</a>
-  </div>
-</div>
-</html>
-
-# HackTheBox Writeups
-### hours of effort summed up in a 3 minute read
 
 ## LaCasaDePapel
 ###### Retired 27 July 2019
 ![](https://www.hackthebox.eu/storage/avatars/509c1d6ddf04cf3d3f8054a564f2e93a.png)
 
-##### Intro
 La Casa De Papel. Gaining an initial foothold was rough. I had never messed with the openssl command (which is massive) or forging client SSL/TLS certs before this. Pair that with a mega crashable HTTPS server and getting user was a trip. Fortunately, privesc wasn’t overly complicated.
 
 
