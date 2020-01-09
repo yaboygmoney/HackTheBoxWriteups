@@ -6,7 +6,6 @@ layout: default
 ###### Retired 30 November 2019
 ![](https://www.hackthebox.eu/storage/avatars/131dbaba68b169bd5ff59ac09420b09f.png)
 
-##### Intro
 This was one of the most realistic HTB machines I've done so far. User required cracking several passwords that were found in router/switch configurations that bad network admins end up emailing around. Root was a refreshing break from the typical permissions abuse and exploited a common flaw I think we're all guilty of: password reuse.
 
 I've already added the machine to my /etc/hosts file as heist.htb. Starting with nmap:
