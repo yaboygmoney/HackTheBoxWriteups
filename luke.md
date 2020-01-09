@@ -1,24 +1,11 @@
 ---
 layout: default
 ---
-<html>
-<div class="topnav">  
-  <div style="float:right">
-    <a href="https://yaboygmoney.github.io/htb/index.html">HOME</a>
-    <a href="https://yaboygmoney.github.io/htb/about.html">ABOUT</a>
-    <a href="https://yaboygmoney.github.io/htb/machines.html">MACHINES</a>
-  </div>
-</div>
-</html>
-
-# HackTheBox Writeups
-### hours of effort summed up in a 3 minute read
 
 ## Luke
 ###### Retired sometime in September? I've been busy.
 ![](https://yaboygmoney.github.io/htb/images/luke/machineImage.jpg)
 
-##### Intro
 Luke wasn't a difficult box, but it was all about organization. By the end, we had 3 different login panels, 6 sets of credentials, and lots of combinations to try.
 
 First step is always our scan.
