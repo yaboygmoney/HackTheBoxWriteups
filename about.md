@@ -11,8 +11,6 @@ layout: default
 </div>
 </html>
 
-# HackTheBox Writeups
-### hours of effort summed up in a 3 minute read
 ## about me
 
 ![HTB Badge](https://www.hackthebox.eu/badge/image/56685)<BR>
