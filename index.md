@@ -11,9 +11,6 @@ layout: default
 </div>
 </html>
 
-# HackTheBox Writeups
-### hours of effort summed up in a 3 minute read
-
 ## Heist
 ###### Retired 30 November 2019
 Cracking, dumping, and more!<BR>
