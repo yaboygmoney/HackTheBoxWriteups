@@ -1,3 +1,6 @@
+<html>
+  <title>Home</title>
+</html>
 ---
 layout: default
 ---
