@@ -82,8 +82,6 @@ This little bit of PowerShell would look through all of Chase's folders and find
 
 ![](https://yaboygmoney.github.io/htb/images/heist/usermasked.jpg)
 
-```type``` is the Windows CLI equivalent to ```cat``` for those unfamiliar. Alternatively, since this is a PowerShell shell, I could have also used the ```Get-Content``` cmdlet.
-
 Now that I have user, I start looking for privesc. Going through a Windows privesc cheat sheet is the best way for to stay organized. There wasn't anything crazy installed in the C:\Program Files\ directory. I ran ```tasklist``` to see what was running but I was denied. ```Get-Process``` is the PowerShell equivalent, and that was permitted. There wasn't anything extraordinarily interesting. Firefox was pretty much the only non-OS process.
 
 ![](https://yaboygmoney.github.io/htb/images/heist/procs.JPG)
