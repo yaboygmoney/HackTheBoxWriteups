@@ -4,8 +4,6 @@ layout: default
 
 ## UnderTheWire - Century
 
-![](https://github.com/PowerShell/PowerShell/blob/master/assets/Avatar.svg)
-
 When I first started learning how to use the Linux CLI, I learned by jumping right in [OverTheWire's Bandit](https://overthewire.org/wargames/bandit/). I recently came across a PowerShell version called [UnderTheWire](https://underthewire.tech/wargames.htm). This is a writeup covering the entirety of the [Century](https://underthewire.tech/century/century.htm) challenge. This one is the easiest of the 5 wargames and shouldn't take too long to complete. I'm skipping Century 0. The credentials are found in the Slack channel.
 
 ### Century 1->2
@@ -126,5 +124,6 @@ Challenge: The password for Century15 is the number of times the word "polo" app
 ```
 
 That's it for Century.
+
 
 #### Keep trying
