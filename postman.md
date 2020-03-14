@@ -5,7 +5,9 @@ layout: default
 ###### Retired March 2020
 ![](https://www.hackthebox.eu/storage/avatars/ad38e890e4e93afce51118bec4b9f48b.png)
 
-I think and hope this is my last writeup before I discovered [Greenshot](https://getgreenshot.org/). Just want to show love for a great application. Postman was a really easy machine loaded up with a couple of quick CVEs that exploited Redis for user and Webin for root. I’ve already added the machine to my /etc/hosts file as postman.htb. As always, I started with ```nmap```.
+I think and hope this is my last writeup before I discovered [Greenshot](https://getgreenshot.org/). Just want to show love for a great application that has greatly improved my image "editing". 
+
+Anyway, Postman was a really easy machine loaded up with a couple of quick CVEs that exploited Redis for user and Webin for root. I’ve already added the machine to my /etc/hosts file as postman.htb. As always, I started with ```nmap```.
 
 ```bash
 nmap -T5 -A -p 1-65535 postman.htb -n -oN nmap.results
