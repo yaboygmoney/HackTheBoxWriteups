@@ -89,7 +89,7 @@ I’ve now got a full-fledged set of creds: Matt:computer2008. Now that I have M
 
 ![](https://yaboygmoney.github.io/htb/images/postman/user.JPG)
 
-Looking back at the nmap results, Webmin MiniServ 1.910 is served up on port 10000. There is an ![exploit]( https://www.exploit-db.com/exploits/46984) created for this version for any authenticated user to execute the package updates module as root. I downloaded the exploit and loaded it into my Metasploit exploits.
+Looking back at the nmap results, Webmin MiniServ 1.910 is served up on port 10000. There is an [exploit](https://www.exploit-db.com/exploits/46984) created for this version for any authenticated user to execute the package updates module as root. I downloaded the exploit and loaded it into my Metasploit exploits.
 
 ```bash
 cd ~/.msf4/modules/exploits/linux
