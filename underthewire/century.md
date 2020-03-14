@@ -20,9 +20,25 @@ Build Version is 10.0.14393.3383
 ---
 The password for Century3 is the name of the built-in cmdlet that performs the wget like function within PowerShell PLUS the name of the file on the desktop.
 
-```PowerShell
+```powershell
 Invoke-WebRequest
 Get-ChildItem -Path C:\users\century2\desktop | Select Name
+```
+
+### Century 3
+---
+The password for Century4 is the number of files on the desktop. 
+
+```powershell
+(Get-ChildItem ..\Desktop -file).count
+```
+
+### Century 4
+---
+The password for Century4 is the number of files on the desktop. 
+
+```powershell
+(Get-ChildItem ..\Desktop -file).count
 ```
 
 #### Keep trying
