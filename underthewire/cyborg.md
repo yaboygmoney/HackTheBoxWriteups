@@ -6,6 +6,13 @@ layout: default
 
 When I first started learning how to use the Linux CLI, I learned by jumping right in [OverTheWire's Bandit](https://overthewire.org/wargames/bandit/). I recently came across a PowerShell version of these Wargames called [UnderTheWire](https://underthewire.tech/wargames.htm). This is a writeup covering the entirety of the [Cyborg](https://underthewire.tech/cyborg/cyborg.htm) challenge. The credentials for the first level are found in the Slack channel.
 
+### Most important commands
+```Powershell
+Get-Command *objective*
+Get-Help Some-Command
+Get-Member
+```
+
 ### Cyborg 1->2
 ---
 Challenge: The password for cyborg2 is the state that the user Chris Rogers is from as stated within Active Directory. 
@@ -115,7 +122,7 @@ Get-ChildItem -file ..\Desktop
 Challenge: The password cyborg14 is the number of days the refresh interval is set to for DNS aging for the underthewire.tech zone PLUS the name of the file on the desktop. 
 
 ```powershell
-Get-DNSServerZoneAging underthewire.tech
+Get-DNSServerZoneAging underthewire.tech | select refreshinterval
 Get-ChildItem -file ..\Desktop
 ```
 
