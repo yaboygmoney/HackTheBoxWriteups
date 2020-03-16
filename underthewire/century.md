@@ -6,6 +6,13 @@ layout: default
 
 When I first started learning how to use the Linux CLI, I learned by jumping right in [OverTheWire's Bandit](https://overthewire.org/wargames/bandit/). I recently came across a PowerShell version of these Wargames called [UnderTheWire](https://underthewire.tech/wargames.htm). This is a writeup covering the entirety of the [Century](https://underthewire.tech/century/century.htm) challenge. This one is the easiest of the 5 wargames and shouldn't take too long to complete. I'm skipping Century 0. The credentials are found in the Slack channel.
 
+### Most important commands
+```Powershell
+Get-Command *objective*
+Get-Help Some-Command
+Get-Member
+```
+
 ### Century 1->2
 ---
 Challenge: The password for Century2 is the build version of the instance of PowerShell installed on this system. 
