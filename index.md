@@ -4,14 +4,14 @@ layout: default
 
 ## UnderTheWire - Cyborg
 ###### PowerShell Challenges
-Read the writeup for how I solved the 15 levels of UnderTheWire's Cyborg.<BR>
+Read the writeup of how I solved the 15 levels of UnderTheWire's Cyborg.<BR>
 [--> Read the writeup](https://yaboygmoney.github.io/htb/underthewire/cyborg.html)
 
 ---
 
 ## UnderTheWire - Century
 ###### PowerShell Challenges
-Read the writeup for how I solved the 15 levels of UnderTheWire's Century.<BR>
+Read the writeup of how I solved the 15 levels of UnderTheWire's Century.<BR>
 [--> Read the writeup](https://yaboygmoney.github.io/htb/underthewire/century.html)
 
 ---
