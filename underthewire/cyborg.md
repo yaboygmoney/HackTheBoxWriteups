@@ -4,7 +4,7 @@ layout: default
 
 ## UnderTheWire - Cyborg
 
-When I first started learning how to use the Linux CLI, I learned by jumping right in [OverTheWire's Bandit](https://overthewire.org/wargames/bandit/). I recently came across a PowerShell version of these Wargames called [UnderTheWire](https://underthewire.tech/wargames.htm). This is a writeup covering the entirety of the [Century](https://underthewire.tech/cyborg/cyborg.htm) challenge. The credentials are found in the Slack channel.
+When I first started learning how to use the Linux CLI, I learned by jumping right in [OverTheWire's Bandit](https://overthewire.org/wargames/bandit/). I recently came across a PowerShell version of these Wargames called [UnderTheWire](https://underthewire.tech/wargames.htm). This is a writeup covering the entirety of the [Cyborg](https://underthewire.tech/cyborg/cyborg.htm) challenge. The credentials for the first level are found in the Slack channel.
 
 ### Cyborg 1->2
 ---
