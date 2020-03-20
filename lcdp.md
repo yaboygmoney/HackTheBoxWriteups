@@ -200,7 +200,7 @@ nc -nvlp 1234
 
 Finally, I renamed ‘new’ to ‘memcached.ini’.
 
-After we get the new ini file written, we execute the program so that it has to go fetch its new configuration. 
+After we get the new ini file written, we execute the program so that it has to go fetch its new configuration (or it'll run from the cron job). 
 ```bash
 /usr/bin/memcached
 ```
