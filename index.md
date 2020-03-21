@@ -2,6 +2,13 @@
 layout: default
 ---
 
+## Forest
+###### Retired March 2020
+ASREProasting, Bloodhounding, AD Abusing, NTLM Relaying, DCSyncing, and PTH. This one had it all.<BR>
+[--> Read the writeup](https://yaboygmoney.github.io/htb/forest.html)
+
+---
+
 ## UnderTheWire - Cyborg
 ###### PowerShell Challenges
 Read the writeup of how I solved the 15 levels of UnderTheWire's Cyborg.<BR>
