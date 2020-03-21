@@ -5,7 +5,7 @@ layout: default
 ###### Retired March 2020
 ![](https://www.hackthebox.eu/storage/avatars/7dedecb452597150647e73c2dd6c24c7.png)
 
-This is likely the most involved "Easy" Windows machine I've done so far. A sample list:
+This is likely the most involved "Easy" Windows machine I've done so far but it was a lot of fun. A sample list of concepts before we get into it:
 + Kerberoasting
 + Bloodhounding
 + NTLM Relay
