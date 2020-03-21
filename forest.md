@@ -125,7 +125,7 @@ $pass = ConvertTo-SecureString "password" -AsPlainText -Force
 New-ADUser ybgm -AccountPassword $pass -Enabled $True
 ```
 
-I'm also going to add myself to the "Exchange Windows Permissions" group.
+I'm also going to use svc-alfresco's permissions to add my new user to the "Exchange Windows Permissions" group.
 
 ```powershell
 Add-ADGroupMember -Identity "Exchange Windows Permissions" -members ybgm
