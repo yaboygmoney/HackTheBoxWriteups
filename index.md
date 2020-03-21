@@ -4,7 +4,7 @@ layout: default
 
 ## Forest
 ###### Retired March 2020
-ASREProasting, Bloodhounding, AD Abusing, NTLM Relaying, DCSyncing, and PTH. This one had it all.<BR>
+ASREProasting, Bloodhounding, AD Abusing, NTLM Relaying, DCSyncing, and PTH.<BR>
 [--> Read the writeup](https://yaboygmoney.github.io/htb/forest.html)
 
 ---
