@@ -163,6 +163,4 @@ With the admin hash, I can use [PSExec](https://github.com/SecureAuthCorp/impack
 
 ![](https://yaboygmoney.github.io/htb/images/forest/root.png)
 
-I want to end with a shoutout to the user [SmoZy](https://www.hackthebox.eu/profile/134223) who helped me get past a syntax hurdle I had with Bloodhound that allowed me to push forward. The HTB community is awesome and be sure to help teach when you can!
-
-#### Keep trying.
+I want to end with a shoutout to the user [SmoZy](https://www.hackthebox.eu/profile/134223) who helped me get past a syntax hurdle I had with Bloodhound that allowed me to push forward. The HTB community is awesome and be sure to help when you can.
