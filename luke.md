@@ -136,5 +136,3 @@ From here, it’s all over. I see ‘Terminal’ on the sidebar. I click ‘New�
 I stopped here because I got my points, but if you’re a completionist, calling back a shell from here is trivial. Thanks for reading!
 
 Until next time.
-
-#### Keep trying
