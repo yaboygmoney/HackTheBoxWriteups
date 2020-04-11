@@ -113,5 +113,3 @@ and a shell is executed under the context of root.
 ![](https://media.giphy.com/media/26FPqAHtgCBzKG9mo/giphy.gif)
 
 Thanks for reading.
-
-#### Keep trying
