@@ -6,7 +6,7 @@ body {
   padding:0px 0px 5px 0px;
   margin: 0px;
   font:14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#f5e4f3;
+  color:#f0e7d5;
   font-weight: normal;
   background: #252525;
   background-attachment: fixed !important;
@@ -50,12 +50,12 @@ h3 {
 }
 
 a {
-  color:#ea4c88;
+  color:#ffcc00;
   font-weight:400;
   text-decoration:none;
 
   &:hover {
-    color: #ff73a8;
+    color: #ffeb9b;
   }
 }
 
@@ -87,7 +87,7 @@ section img {
 }
 
 blockquote {
-  border-left:3px solid #663399;
+  border-left:3px solid #ffcc00;
   margin:0;
   padding:0 0 0 20px;
   font-style:italic;
