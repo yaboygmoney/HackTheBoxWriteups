@@ -123,5 +123,3 @@ evil-winrm -i heist.htb -u administrator -p "4dD!5}x/re8]FBuZ"
 Password reuse strikes again! Admin's webpanel login is the same as their WinRM password, providing me with a root shell and the root flag.
 
 Overall, I was really impressed with this machine. The realism was there and it's great to get on a Windows machine. Most importantly, I learned a couple of new tools including lookupsid.py and Evil-WinRM. Evil-WinRM is a great shell and I'll definitely be using it again.
-
-#### Keep trying
