@@ -81,7 +81,7 @@ ssh -i home/david/.ssh/id_rsa david@traverxec.htb
 
 ![](https://yaboygmoney.github.io/htb/images/traverxec/10.png)
 
-<a name="root">Now for root.</a>
+Now for root.<a name="root"></a>
 
 In david's home directory, there's a ```bin``` directory. One of the files called ```server-stats.sh``` ends with the line ```/usr/bin/sudo /usr/bin/journalctl -n5 -unostromo.service | /usr/bin/cat```. This is our way in. 
 
