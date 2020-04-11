@@ -107,5 +107,3 @@ I tried sending that configuration and got an error, no session. Then I remember
 Success. The CVE is exploited.
 
 Until next time.
-
-#### Keep trying
