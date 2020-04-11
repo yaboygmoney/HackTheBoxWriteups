@@ -2,6 +2,13 @@
 layout: default
 ---
 
+## Traverxec
+###### Retired April 2020
+Size matters..when it comes to journalctl.<BR>
+[--> Read the writeup](https://yaboygmoney.github.io/htb/traverxec.html)
+
+---
+
 ## Forest
 ###### Retired March 2020
 ASREProasting, Bloodhounding, AD Abusing, NTLM Relaying, DCSyncing, and PTH.<BR>
