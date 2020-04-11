@@ -211,5 +211,3 @@ All that’s left to do is tidy up. Copy the original memcached.ini file back to
 Again, special thanks to Alec (sarcastically named imthebest on HTB) for grinding through those ```openssl``` commands. To us filthy casuals, cert forgery was no joke.
 
 Until next time.
-
-#### Keep trying
