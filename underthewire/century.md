@@ -131,6 +131,3 @@ Challenge: The password for Century15 is the number of times the word "polo" app
 ```
 
 That's it for Century.
-
-
-#### Keep trying
