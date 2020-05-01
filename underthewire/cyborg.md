@@ -135,5 +135,4 @@ Get-WmiObject -class "win32_dcomapplication" | where appid -eq "{59B8AFA0-229E-4
 Get-ChildItem -file ..\Desktop
 ```
 
-That's it for Cyborg
-#### Keep trying
+That's it for Cyborg.
