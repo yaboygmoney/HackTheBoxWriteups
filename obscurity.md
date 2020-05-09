@@ -2,7 +2,7 @@
 layout: default
 ---
 ## Obscurity
-###### Retired [date]
+###### Retired May 2020
 ![](https://www.hackthebox.eu/storage/avatars/8c606d79541774c87ab0ee5705821323.png)
 
 ##### Intro
