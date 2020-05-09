@@ -189,4 +189,4 @@ From there, it was as easy as running the hash through ```john``` and logging in
 
 ![](https://yaboygmoney.github.io/htb/images/obscurity/root.png)
 
-![](https://giphy.com/gifs/l4JySAWfMaY7w88sU/html5)
+![](https://media.giphy.com/media/l4JySAWfMaY7w88sU/giphy.gif)
