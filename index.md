@@ -2,6 +2,13 @@
 layout: default
 ---
 
+## Obscurity
+###### Retired May 2020
+Lot's of code analysis! Fun.<BR>
+[--> Read the writeup](https://yaboygmoney.github.io/htb/obscurity.html)
+
+---
+
 ## Traverxec
 ###### Retired April 2020
 Size matters..when it comes to journalctl.<BR>
