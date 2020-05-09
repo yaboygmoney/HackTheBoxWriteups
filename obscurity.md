@@ -6,7 +6,7 @@ layout: default
 ![](https://www.hackthebox.eu/storage/avatars/8c606d79541774c87ab0ee5705821323.png)
 
 ##### Intro
-Static code analysis! Initial foothold was very easy, user was a little more involved, and root was quick. Full-time developers would absolutely crush this box.
+Static code analysis! Initial foothold was pretty easy, user was a little more involved, and root was quick. Full-time developers would absolutely crush this box.
 
 Start off with a quick nmap looking for open ports:
 ```bash
