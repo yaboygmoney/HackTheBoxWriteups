@@ -10,7 +10,7 @@ Static code analysis! Initial foothold was pretty easy, user was a little more i
 
 Start off with a quick nmap looking for open ports:
 ```bash
-nmap -sS -n -n obscurity.htb -p 1-65535
+nmap -sS -v -n obscurity.htb -p 1-65535
 ```
 
 ![](https://yaboygmoney.github.io/htb/images/obscurity/nmap1.png)
