@@ -87,7 +87,7 @@ The file is 3732 bytes of text, so I decide to pull it down to my Kali machine b
 
 Looking through the file, credentials are easily spotted in a command ryan was using to mount a file share.
 
-![](https://yaboygmoney.github.io/htb/images/resolute/ryancreds.png)
+![](https://yaboygmoney.github.io/htb/images/resolute/ryancred.png)
 
 Exit the session as melanie and start a new one as ryan:
 
