@@ -113,7 +113,7 @@ I start Metasploits exploit/multi/handler to catch the callback, and upload my D
 
 ![](https://yaboygmoney.github.io/htb/images/resolute/busted.png)
 
-Windows Defender is busting this payload as soon as it hits the disk. Shay Ber's previously mentioned article does mention that the payload can be called from a UNC path from a remote server. This is important, because Windows Defender only cares if the file is touching Windows Defender's disk. Loading the DLL from a remote server is safe. So to abuse this feature, I need to do a few things:
+Windows Defender is busting this payload as soon as it hits the disk. Shay Ber's previously mentioned article does mention that the payload can be called from a UNC path from a remote server. This is important, because this instance of Windows Defender only seems to care if the file is touching the disk. Loading the DLL from a remote server is safe, so to abuse this feature, I need to do a few things:
 
 1. Serve a share folder from Kali, hosting the DLL
 2. Mount the share folder so that Ryan can use it
