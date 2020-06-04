@@ -2,6 +2,13 @@
 layout: default
 ---
 
+## Resolute
+###### Retired June 2020
+Straight zoopin' Windows Defender.<BR>
+[--> Read the writeup](https://yaboygmoney.github.io/htb/resolute.html)
+
+---
+
 ## Obscurity
 ###### Retired May 2020
 Lot's of code analysis! Fun.<BR>
