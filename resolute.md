@@ -42,7 +42,7 @@ evil-winrm -u marko -p 'Welcome123!' -i resolute.htb
 
 ![](https://yaboygmoney.github.io/htb/images/resolute/badpass.png)
 
-Looks like the password won't work for ```marko```. It does appear to be a standard "Welcome to the organization!" password that is set by default. To check it against the user list provided by enum4linux, I ran
+Looks like the password won't work for ```marko```. It does appear to be a standard "Welcome to the organization!" password that is set by default. To check it against the user list named "u.txt" containing all of the names provided by enum4linux, I ran
 
 ```bash
 for user in $(cat u.txt); do evil-winrm -u $user -p 'Welcome123!' -i resolute.htb; done
