@@ -2,7 +2,7 @@
 layout: default
 ---
 ## Resolute
-###### Retired [date]
+###### Retired June 2020
 ![](https://www.hackthebox.eu/storage/avatars/4c86a642ea237dfde036963e6d182b40.png)
 
 This Windows machine takes advantage of lazy adminstrators, poor PowerShell hygiene, and Windows Defender bypasses.
