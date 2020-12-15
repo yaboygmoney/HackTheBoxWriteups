@@ -3,7 +3,7 @@ layout: default
 ---
 
 ## SolarWinds Compromise Hunting
-###### A work in progress. All suggestions come from FireEye's technical reports as they develop.
+A work in progress. All suggestions come from FireEye's technical reports as they develop.
 
 ### Check for a single host logging in to several accounts
 ```Powershell
@@ -11,6 +11,7 @@ Invoke-Command -ComputerName (Get-Content ./yourHostnames.txt) { Get-EventLog -L
 ```
 
 ### Check Shodan/other internet scraping 'service' for your hostnames
+The hostnames within a compromised network are used within SSL certs that are leaked by the infrastructure. Those certificates will likely show up on Shodan.
 https://www.shodan.io/search?query=yourHostnameHere
 
 ### Check network traffic for SMB patterns that match a file replace, execute, and replace again
