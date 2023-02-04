@@ -2,6 +2,12 @@
 layout: default
 ---
 
+# Blue Team / Defense
+
+
+
+# Hacking / Pentesting
+
 ## Resolute
 ###### Retired June 2020
 Straight zoopin' Windows Defender.<BR>
