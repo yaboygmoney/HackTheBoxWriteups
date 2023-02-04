@@ -8,11 +8,15 @@ layout: default
 ###### Windows
 Full disk image with a Minecraft/Log4j related breach.<BR>
 [--> Read the writeup](https://yaboygmoney.github.io/htb/Magnet22.html)
+  
+ ---
 
 ## ItsyBitsy
 ###### TryHackMe
 Connection log analysis with Kibana.<BR>
 [--> Read the writeup](https://yaboygmoney.github.io/htb/ItsyBitsy.html)
+ 
+ ---
 
 # Hacking / Pentesting
 
