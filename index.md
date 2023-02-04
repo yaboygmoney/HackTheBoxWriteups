@@ -4,7 +4,10 @@ layout: default
 
 # Blue Team / Defense
 
-
+## ItsyBitsy
+###### TryHackMe
+Connection log analysis with Kibana.<BR>
+[--> Read the writeup](https://yaboygmoney.github.io/htb/ItsyBitsy.html)
 
 # Hacking / Pentesting
 
