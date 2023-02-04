@@ -50,7 +50,7 @@ Challenge: Default Skin
 Points: 25  
 What is the SID of the account that was used to create the extra user?  
 To answer this one, I exported the Security log from the disk image and loaded it into my local Event Viewer. A quick filter for Event ID 4720 (User Creation) had only one hit. The user minecraftsteve was created on 11 Feb 2022 at 7:29:43 PM. 
-![](https://yaboygmoney.github.io/htb/images/magnet22/SID.png)
+![](https://yaboygmoney.github.io/htb/images/magnet22/SID.png)  
 That user's SID is S-1-5-21-3341181097-1059518978-806882922-1002, which you might mistake for the answer at first. Event Viewer loses a lot of the context in the "General" tab. Moving to the "Details" tab, we can see the SubjectUserName & SubjectUserSid both point to the system. The TargetUserName is the user account that was created by the subject S-1-5-18.
 ![](https://yaboygmoney.github.io/htb/images/magnet22/SIDAnswer.png)
 
