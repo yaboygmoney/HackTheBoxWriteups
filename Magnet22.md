@@ -30,6 +30,7 @@ What is the Build Number of the Windows Install
 Challenge: Nil Layer 
 Points: 10
 What was the ZeroTier Network name?
+Check out local configurations for ZeroTier in Patrick's AppData Local. We can find "pensive_joybubbles" stored under "Name:" in the saved_networks.json file.
 
 Challenge: Crater of Diamonds 
 Points: 10
@@ -54,6 +55,7 @@ Patrick reports seeing a couple of notifications saying malicious files were fou
 Challenge: 1T5 H4CK1N6 T1M3 
 Points: 50
 Patrick reports a suspicious console open on his screen. Can you find the full path to the script that caused this?
+For this one, we got a clue from the question. There are only so many types of scripts that can run on Windows, and the ones that generally pop a console are BAT files. In Autopsy, File Views > File Types > By Extension > Executable > .bat. There were only 34 here, but one was in a weird location. C:\Users\Patrick\lolololol\matrix.bat
 
 Challenge: Philatelists Club 
 Points: 50
