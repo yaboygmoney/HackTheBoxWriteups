@@ -10,18 +10,22 @@ Source file: https://storage.googleapis.com/mvs-2022/HP-Final.zip – MD5: B28EE
 Challenge: Never Gonna Give You Up
 Points: 5
 How many times did Patrick get rick rolled?
+We can open up Data Artifacts > Web History in Autopsy and see that there were 9 times when Patrick opened the link to 'Never Gonna Give You Up' on YouTube.
 
 Challenge: r/hobbies
 Points: 5
 What subreddit did Patrick frequent the most? Format: r/subredditName
+r/Stamps. Same logic as before: Data Artifacts > Web History, find reddit. 
 
 Challenge: Version aversion
 Points: 5
 What was the version number of ZeroTier that was installed on the system?
+Data Artifacts > Installed Programs. ZeroTier One v.1.8.4.
 
 Challenge: Insider Preview 
 Points: 10
 What is the Build Number of the Windows Install
+
 
 Challenge: Nil Layer 
 Points: 10
