@@ -45,10 +45,12 @@ How many wood blocks has n30forever mined?
 Challenge: Default Skin  
 Points: 25  
 What is the SID of the account that was used to create the extra user?  
+To answer this one, I exported the Security log from the disk image and loaded it into my local Event Viewer. A quick filter for Event ID 4720 (User Creation) had only one hit. The user minecraftsteve was created on 11 Feb 2022 at 7:29:43 PM. That user's SID is S-1-5-21-3341181097-1059518978-806882922-1002, which you might mistake for the answer at first. Event Viewer loses a lot of the context in the "General" tab. Moving to the "Details" tab, we can see the SubjectUserName & SubjectUserSid both point to the system. The TargetUserName is the user account that was created by the subject S-1-5-18.
 
 Challenge: Groundhog Day  
 Points: 25  
 Where did n30forever spawn on the most recent logon? Format: x,y,z  
+If we go into the Minecraft logs in C:\Users\Patrick\Minecraft\logs and open the most recent log, towards the bottom of the log we can see a login at 226.5624, 71, 200. Bonus Log4jRCE.
 
 Challenge: Real 2020 Moment   
 Points: 50  
