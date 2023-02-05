@@ -99,7 +99,7 @@ This is the content of the file beforehand and how you can generally determine w
 ![](https://yaboygmoney.github.io/htb/images/magnet22/decode1.png)  
 
 We can verify we got the file carved out with a quick file command and/or double checking the COFF header bytes
-![](https://yaboygmoney.github.io/htb/images/magnet/magicbytes.png)
+![](https://yaboygmoney.github.io/htb/images/magnet22/magicbytes.png)
 
 Finding the compile date is as easy as running exiftool against the binary
-![](https://yaboygmoney.github.io/htb/images/magnet/compileTime.png)
+![](https://yaboygmoney.github.io/htb/images/magnet22/compileTime.png)
