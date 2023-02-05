@@ -41,6 +41,8 @@ Check out local configurations for ZeroTier in Patrick's AppData Local. We can f
 Challenge: Crater of Diamonds   
 Points: 10  
 When did n30forever “Mine” diamonds? YYYY-MM-DD HH:MM UTC  
+I figured this would be in a Minecraft log, but I let Autopsy find it for me with a keyword search. That pointed me to one particular log that had what we were looking for.
+![](https://yaboygmoney.github.io/htb/images/magnet22/mining.png) 
 
 Challenge: Punching Wood  
 Points: 10  
@@ -63,6 +65,8 @@ If we go into the Minecraft logs in C:\Users\Patrick\Minecraft\logs and open the
 Challenge: Real 2020 Moment   
 Points: 50  
 Patrick reports seeing a couple of notifications saying malicious files were found and quarentined. What was the file name of the malicious file that was spawned with the process name starting with the letter S?  
+In the Defender logs, we can filter on Event ID 1116 for anything tripping the AV. We're clued in on the process starting with the letter S, which ends up being sihost.exe. The filename associated with this even is xPSPLcEr.vbs. A few minutes before this event trips, a different randomized vbscript is observed. A few hours later, a Meterpreter alert trips.
+![](https://yaboygmoney.github.io/htb/images/magnet22/quarantine.png)
 
 Challenge: 1T5 H4CK1N6 T1M3   
 Points: 50  
