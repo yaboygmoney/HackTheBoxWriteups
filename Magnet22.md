@@ -5,7 +5,7 @@ layout: default
 ## Magnet Windows Forensics CTF 2022
 ##### Work in progress 
 
-In this CTF, I'll be running Autopsy because I'm doing this a year after the event and I didn't get AXIOM.
+In this CTF, I'll be running Autopsy because I'm doing this a year after the event and I didn't get AXIOM. Pretty soon I'll be doing a full breakdown of the attack rather than just answering the CTF questions.
 
 Source file: https://storage.googleapis.com/mvs-2022/HP-Final.zip   
 MD5: B28EE46B0CD62165D82AE41ED852D3BF
@@ -86,8 +86,20 @@ Earlier when looking through .txt files, I noticed one that pointed me towards t
 
 Challenge: Obfuscation Occasion   
 Points: 75  
-Locate and extract the file identified in the above question. What is the first function name in the malware? **Caution sample is REAL MALWARE**  
+Locate and extract the file identified in the above question. What is the first function name in the malware?
+After mounting the disk into SIFT Workstation, I ran [Defender Dump](https://github.com/knez/defender-dump) against the filesystem and dumped the files. The first function of the xPSPLcEr.vbs file was "qiZlDWBXp".
+![](https://yaboygmoney.github.io/htb/images/magnet22/firstfunction.png)
 
 Challenge: Oh Boy Its Time to DCode   
 Points: 100  
-It looks like the vba file contains another encoded file. Decode this and provide the time/date stamp located inside the COFF header in UTC. yyyy/mm/dd:HH:MM:SS **Caution sample is REAL MALWARE**  
+It looks like the vba file contains another encoded file. Decode this and provide the time/date stamp located inside the COFF header in UTC. yyyy/mm/dd:HH:MM:SS
+To get the (spoiler alert: Meterpreter) executable out of the VB Script, I copied the base64 encoded string into a new text file and ran it through  
+`cat payload.txt | base64 -d > outfile`  
+This is the content of the file beforehand and how you can generally determine what decompression/decoding/deobfuscation is occuring in the script
+![](https://yaboygmoney.github.io/htb/images/magnet22/decode1.png)  
+
+We can verify we got the file carved out with a quick file command and/or double checking the COFF header bytes
+![](https://yaboygmoney.github.io/htb/images/magnet/magicbytes.png)
+
+Finding the compile date is as easy as running exiftool against the binary
+![](https://yaboygmoney.github.io/htb/images/magnet/compileTime.png)
