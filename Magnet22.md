@@ -98,8 +98,9 @@ To get the (spoiler alert: Meterpreter) executable out of the VB Script, I copie
 This is the content of the file beforehand and how you can generally determine what decompression/decoding/deobfuscation is occuring in the script  
 ![](https://yaboygmoney.github.io/htb/images/magnet22/decode1.png)   
 
-We can verify we got the file carved out with a quick file command and/or double checking the COFF header bytes  
+We can verify we got the file carved out with a quick file command and/or double checking the COFF header bytes    
+
 ![](https://yaboygmoney.github.io/htb/images/magnet22/magicbytes.png)  
 
-Finding the compile date is as easy as running exiftool against the binary  
+Finding the compile date is as easy as running exiftool against the binary   
 ![](https://yaboygmoney.github.io/htb/images/magnet22/compileTime.png)  
