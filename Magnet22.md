@@ -3,7 +3,7 @@ layout: default
 ---
 
 ## Magnet Windows Forensics CTF 2022
-### Work in progress 
+### Posted Feb 2022 - Work in progress 
 
 In this CTF, I'll be running Autopsy because I'm doing this a year after the event and I didn't get AXIOM. Pretty soon I'll be doing a full breakdown of the attack rather than just answering the CTF questions.
 
